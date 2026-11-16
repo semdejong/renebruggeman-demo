@@ -18,7 +18,7 @@ export default function VernieuwenPage() {
     <>
       <PageHeader
         title="Vernieuwen van houtwerk"
-        lede="Drie regels, zoals hij ze zelf zet. Daarna de foto's van dat werk."
+        lede="Drie regels van hemzelf, en daarna de foto's van dat werk."
       />
       <div className="flex flex-col">
         {vernieuwen.lines.map((line, index) => (

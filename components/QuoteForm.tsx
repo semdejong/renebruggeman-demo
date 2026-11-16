@@ -24,7 +24,7 @@ export default function QuoteForm({ intent }: { intent: "offerte" | "contact" })
     lines.push("", bericht);
 
     const href = `mailto:${contact.email}?subject=${encodeURIComponent(copy.subject)}&body=${encodeURIComponent(lines.join("\n"))}`;
-    setStatus("Uw e-mailprogramma wordt geopend. Het bericht gaat pas weg als u het zelf verstuurt.");
+    setStatus("Uw mailprogramma wordt geopend. Het bericht gaat pas weg als u het zelf verstuurt.");
     window.location.href = href;
   }
 
@@ -63,7 +63,7 @@ export default function QuoteForm({ intent }: { intent: "offerte" | "contact" })
           Het gaat om
         </label>
         <select id={`${intent}-werk`} name="werk" className="field mt-2" defaultValue="">
-          <option value="">Geen keuze</option>
+          <option value="">Kies het werk</option>
           {werkOptions.map((option) => (
             <option key={option} value={option}>
               {option}

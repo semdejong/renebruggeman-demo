@@ -54,7 +54,7 @@ export default function Footer() {
             </ul>
           </nav>
         </div>
-        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 pb-8 text-sm text-white/80 md:flex-row md:justify-between">
+        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 pb-8 text-sm text-white/80 md:flex-row md:justify-between md:pr-44 md:pb-20">
           <p>{company.name} · {contact.city}</p>
           <a href="https://sleads.nl" target="_blank" rel="noopener" className="text-white/80">
             Concept door Sleads

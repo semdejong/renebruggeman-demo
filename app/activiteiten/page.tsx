@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 };
 
 const marks = [
-  { title: "Ieder jaar", text: "Elk jaar opnieuw hoofdsponsor, in oktober." },
-  { title: "Hoofdsponsor", text: "Van het Krent Slemdamesdubbel tennistoernooi." },
-  { title: "Oktober", text: "De foto's tonen het bord, de beker en de speelsters." },
+  { title: "Ieder jaar", text: "Oktober, jaar op jaar." },
+  { title: "Hoofdsponsor", text: "Zijn naam staat op het bord." },
+  { title: "Oktober", text: "Beker en speelsters, zonder namen erbij." },
 ];
 
 export default function ActiviteitenPage() {
@@ -46,7 +46,7 @@ export default function ActiviteitenPage() {
 
       <div className="mx-auto max-w-6xl px-5 py-12 pb-16">
         <p className="max-w-xl">
-          Onder meer het bord met zijn naam, de beker en de speelsters. Zonder namen van speelsters.
+          De reeks hieronder, op nummer.
         </p>
         <Gallery groups={[{ label: "01–10", photos: activiteitPhotos }]} layout="stack" />
       </div>

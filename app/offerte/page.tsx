@@ -13,12 +13,12 @@ export const metadata: Metadata = {
 
 const notes = [
   {
-    title: "Vrijblijvend",
-    text: "U zit nergens aan vast. Hij maakt de offerte kosteloos.",
+    title: "Wat u vraagt",
+    text: "Vrijblijvend en kosteloos. U zit nergens aan vast.",
   },
   {
-    title: "Kosteloos",
-    text: "Bel of mail. Het formulier opent alleen uw eigen e-mailprogramma.",
+    title: "Wat u schrijft",
+    text: "Het werk, en hoe hij u bereikt. Het formulier opent alleen uw mailprogramma.",
   },
   {
     title: "November tot maart",

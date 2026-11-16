@@ -28,7 +28,7 @@ export default function Header() {
   }, [open]);
 
   return (
-    <header data-section="header" className="sticky top-0 z-40">
+    <header data-section="header" className="sticky top-0 z-50">
       <div className="bg-inkt text-wit">
         <div className="flex h-16 items-center gap-3 px-4 min-[1180px]:h-[4.5rem] min-[1180px]:gap-5 min-[1180px]:px-5">
           <Link href="/" className="shrink-0" aria-label={`${company.name}, naar de beginpagina`}>
@@ -93,7 +93,8 @@ export default function Header() {
         <nav
           id="mobiel-menu"
           aria-label="Mobiel menu"
-          className="absolute inset-x-0 top-full z-40 max-h-[calc(100dvh-4.5rem)] overflow-y-auto bg-papier text-inkt min-[1180px]:hidden"
+          className="fixed inset-x-0 bottom-0 z-50 overflow-y-auto bg-papier text-inkt min-[1180px]:hidden"
+          style={{ top: "5.25rem" }}
         >
           <ul className="px-4 py-4">
             {nav.map((item) => {

@@ -18,7 +18,7 @@ export default function PrivacyPage() {
     },
     {
       title: "Het formulier",
-      text: "Het formulier op Contact en Offerte stuurt niets naar een server van deze site. Het opent uw eigen e-mailprogramma. De tekst vertrekt pas wanneer u dat bericht zelf verstuurt.",
+      text: "Het formulier op Contact en Offerte stuurt niets naar een server van deze site. Het opent uw eigen mailprogramma. De tekst vertrekt pas wanneer u dat bericht zelf verstuurt.",
     },
     {
       title: "Een vraag",
@@ -31,7 +31,7 @@ export default function PrivacyPage() {
         title="Privacy"
         lede="Dit is een conceptsite van Sleads voor René Bruggeman Schilderwerken."
       />
-      <div className="mx-auto flex max-w-6xl flex-col gap-0 px-5 pb-8 lg:flex-row lg:items-stretch lg:px-0">
+      <div className="mx-auto flex max-w-6xl flex-col px-5 pb-8 lg:flex-row lg:items-stretch">
         {plates.map((plate, index) => (
           <div key={plate.title} className="contents">
             {index > 0 ? <Scarf /> : null}

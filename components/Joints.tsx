@@ -8,12 +8,12 @@ export function EdgeJoint({ flip = false }: { flip?: boolean }) {
   const left = flip ? paper : ink;
   const right = flip ? ink : paper;
   return (
-    <div className="flex h-2.5" aria-hidden="true">
+    <div className="flex h-5" aria-hidden="true">
       <div className="h-full min-w-0 flex-[1.15]" style={{ background: left }} />
-      <svg viewBox="0 0 40 10" className="h-full w-10 shrink-0">
-        <rect width="40" height="10" fill={right} />
-        <path d="M0 0 H14 V5 H28 V10 H0 Z" fill={left} />
-        <path d="M14 1 V5 H28" fill="none" stroke="#FFFF00" strokeWidth="2.5" />
+      <svg viewBox="0 0 96 20" className="h-full w-24 shrink-0">
+        <rect width="96" height="20" fill={right} />
+        <path d="M0 0 H28 V10 H68 V20 H0 Z" fill={left} />
+        <path d="M28 1.6 V10 H68" fill="none" stroke="#FFFF00" strokeWidth="3" />
       </svg>
       <div className="h-full min-w-0 flex-1" style={{ background: right }} />
     </div>
@@ -27,13 +27,9 @@ export function Scarf({ axis = "responsive" }: { axis?: "x" | "y" | "responsive"
   return (
     <span aria-hidden="true" className="block shrink-0 self-stretch">
       {horizontal && (
-        <svg
-          viewBox="0 0 100 8"
-          preserveAspectRatio="none"
-          className={`h-2 w-full ${axis === "responsive" ? "lg:hidden" : ""}`}
-        >
-          <polygon points="0,1 100,0 100,4 0,6" fill="#FFFF00" />
-        </svg>
+        <span className={`relative block h-3 w-full ${axis === "responsive" ? "lg:hidden" : ""}`}>
+          <span className="absolute top-1 left-6 h-[3px] w-24 bg-geel" />
+        </span>
       )}
       {vertical && (
         <svg
@@ -72,7 +68,7 @@ export function ProcessStrip() {
         <Fragment key={step.code}>
           {index > 0 ? <Scarf /> : null}
           <li
-            className={`min-h-36 flex-1 px-5 py-6 ${index % 2 === 0 ? "bg-vlak" : "bg-wit"}`}
+            className={`min-h-36 min-w-0 flex-1 px-5 py-6 ${index % 2 === 0 ? "bg-vlak" : "bg-wit"}`}
             style={index === 2 ? { boxShadow: "inset 0 3px 0 #FFFF00" } : undefined}
           >
             <p className="font-mono text-[0.95rem] font-medium tracking-wide">

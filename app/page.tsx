@@ -9,7 +9,7 @@ export default function Home() {
   const { company, overview, contact, intro } = content;
   return (
     <>
-      <section data-section="hero" className="mx-auto grid max-w-6xl items-end gap-10 px-5 py-12 md:py-16 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-16 lg:py-20">
+      <section data-section="hero" className="mx-auto grid max-w-6xl items-end gap-10 px-5 py-12 md:py-16 lg:min-h-[calc(100svh-5.25rem)] lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:items-center lg:gap-16 lg:py-20">
         <div>
           <h1 className="font-display max-w-3xl text-[clamp(2.7rem,6vw,4.8rem)] leading-[1.02]">
             {company.slogan}
@@ -80,9 +80,9 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 pb-8">
-        <h2 className="font-display max-w-xl text-3xl leading-tight md:text-4xl">Zo noemt hij zijn loopbaan</h2>
+        <h2 className="font-display max-w-xl text-3xl leading-tight md:text-4xl">Sinds 1978</h2>
         <p className="mt-3 max-w-xl">Schilder sinds 1978, ZZP&apos;er sinds 2007.</p>
-        <div className="mt-6 flex flex-col md:flex-row md:items-stretch">
+        <div className="mt-6 flex flex-col lg:flex-row lg:items-stretch">
           {careerMarks.map((mark, index) => (
             <div key={mark.year} className="contents">
               {index > 0 ? <Scarf /> : null}
@@ -95,7 +95,7 @@ export default function Home() {
         </div>
         <p className="mt-6">
           <Link href="/over-ons" className="text-oker">
-            De voorstelling in zijn eigen woorden
+            Lees hoe hij zich voorstelt
           </Link>
         </p>
       </section>

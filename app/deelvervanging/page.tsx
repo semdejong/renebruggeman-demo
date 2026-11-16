@@ -20,7 +20,7 @@ export default function DeelvervangingPage() {
         <p className="max-w-2xl">{deelvervanging.body}</p>
         <p className="mt-6 max-w-2xl">{content.intro.self}</p>
       </div>
-      <div className="flex flex-col md:flex-row md:items-stretch">
+      <div className="flex flex-col lg:flex-row lg:items-stretch">
         {deelvervanging.benefits.map((benefit, index) => (
           <div key={benefit} className="contents">
             {index > 0 ? <Scarf /> : null}
@@ -35,7 +35,7 @@ export default function DeelvervangingPage() {
         <ProcessStrip />
       </div>
 
-      <div className="mx-auto grid max-w-6xl items-end gap-10 px-5 py-6 lg:grid-cols-[15rem_minmax(0,1fr)]">
+      <div className="mx-auto flex max-w-6xl flex-col items-start gap-8 px-5 py-8 md:flex-row md:items-end">
         <JointDiagram />
         <figure>
           <Photo photo={content.photos.kozijn} />

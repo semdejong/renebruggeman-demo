@@ -29,9 +29,9 @@ export default function OverOnsPage() {
 
       <section className="mt-8">
         <div className="mx-auto max-w-6xl px-5 pb-4">
-          <h2 className="font-display text-3xl md:text-4xl">De jaartallen die hij zelf noemt</h2>
+          <h2 className="font-display text-3xl md:text-4xl">1978 en 2007</h2>
         </div>
-        <div className="flex flex-col md:flex-row md:items-stretch">
+        <div className="flex flex-col lg:flex-row lg:items-stretch">
           {careerMarks.map((mark, index) => (
             <div key={mark.year} className="contents">
               {index > 0 ? <Scarf /> : null}

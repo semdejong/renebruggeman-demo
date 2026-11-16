@@ -40,11 +40,11 @@ export default function SchilderwerkPage() {
       <section className="mx-auto max-w-6xl px-5 py-14">
         <h2 className="font-display max-w-3xl text-3xl leading-tight md:text-5xl">{intro.winter}</h2>
         <p className="mt-4 max-w-xl">Die periode, maand voor maand. Alleen voor binnenwerk, en alleen in overleg.</p>
-        <ol className="mt-8 flex flex-col sm:flex-row sm:items-stretch">
+        <ol className="mt-8 flex flex-col lg:flex-row lg:items-stretch">
           {winterMonths.map((month, index) => (
             <li key={month} className="contents">
               {index > 0 ? <Scarf /> : null}
-              <div className={`min-w-0 flex-1 px-4 py-6 ${index % 2 === 0 ? "bg-inkt text-wit" : "bg-vlak"}`}>
+              <div className={`min-w-0 flex-1 px-4 py-6 ${index % 2 === 0 ? "bg-vlak" : "bg-wit"}`}>
                 <p className="font-display text-2xl leading-none">{month}</p>
               </div>
             </li>
@@ -52,7 +52,7 @@ export default function SchilderwerkPage() {
         </ol>
       </section>
 
-      <div className="mx-auto grid max-w-6xl items-end gap-10 px-5 pb-16 lg:grid-cols-[minmax(0,1fr)_228px]">
+      <div className="mx-auto grid max-w-6xl items-start gap-10 px-5 pb-16 lg:grid-cols-[minmax(0,1fr)_228px]">
         <figure>
           <div className="inline-flex max-w-full items-stretch bg-vlak">
             <span aria-hidden="true" className="w-[3px] shrink-0 bg-geel" />

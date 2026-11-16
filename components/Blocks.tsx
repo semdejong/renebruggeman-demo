@@ -25,7 +25,7 @@ export function CallBand() {
           </h2>
           <p className="mt-4 text-white/90">{company.slogan} {quote}</p>
         </div>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-3 md:pr-40">
           <a href={contact.phoneTel} data-cta={ctaType(contact.phoneTel)} className="btn btn-geel font-mono">
             {contact.phoneDisplay}
           </a>
@@ -52,7 +52,7 @@ export function ServiceJoint() {
           const tone = href ? (index % 2 === 0 ? "bg-vlak text-inkt" : "bg-wit text-inkt") : "bg-inkt text-wit";
           const body = (
             <>
-              <h3 className="font-display text-[1.85rem] leading-none md:text-4xl">{item.title}</h3>
+              <h3 className="font-display text-[1.7rem] leading-tight lg:text-[1.85rem]">{item.title}</h3>
               <p className="mt-4 max-w-[18rem] text-[1.0625rem] leading-relaxed">{item.text}</p>
             </>
           );
@@ -62,14 +62,14 @@ export function ServiceJoint() {
               {href ? (
                 <Link
                   href={href}
-                  className={`member-link block min-h-44 min-w-0 px-6 py-8 no-underline lg:min-h-72 lg:px-7 lg:py-10 ${tone}`}
+                  className={`member-link block min-h-40 min-w-0 px-6 py-8 no-underline lg:min-h-56 lg:px-6 lg:py-8 ${tone}`}
                   style={{ flexGrow: item.flex, flexBasis: 0, flexShrink: 1 }}
                 >
                   {body}
                 </Link>
               ) : (
                 <div
-                  className={`min-h-44 min-w-0 px-6 py-8 lg:min-h-72 lg:px-7 lg:py-10 ${tone}`}
+                  className={`min-h-40 min-w-0 px-6 py-8 lg:min-h-56 lg:px-6 lg:py-8 ${tone}`}
                   style={{ flexGrow: item.flex, flexBasis: 0, flexShrink: 1 }}
                 >
                   {body}

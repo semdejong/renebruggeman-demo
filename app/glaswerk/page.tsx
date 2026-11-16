@@ -14,12 +14,7 @@ export default function GlaswerkPage() {
   return (
     <>
       <PageHeader title="Glas, van een eenvoudige ruit tot isolatieglas" lede={content.intro.glass} />
-      <div className="mx-auto max-w-6xl px-5 pt-4 pb-6">
-        <p className="max-w-xl">
-          Dit is wat hij er zelf over schrijft, van een eenvoudige ruit tot het vervangen van enkelglas.
-        </p>
-      </div>
-      <div className="mx-auto flex max-w-6xl flex-col gap-0 px-5 pb-16">
+      <div className="mx-auto flex max-w-6xl flex-col px-5 pt-6 pb-16">
         {glassLadder.map((step, index) => (
           <div key={step} style={{ marginLeft: `${index * 6}%` }}>
             {index > 0 ? (

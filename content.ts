@@ -76,31 +76,31 @@ export const content = {
   services: [
     {
       title: "Schilderwerk",
-      text: "Onderhoud binnen en buiten hoort bij mijn dagelijkse werk. Voor binnenwerk van november tot en met maart spreek ik een kostendekkend uurloon af.",
+      text: "Onderhoud binnen en buiten, het dagelijkse werk.",
       href: "/schilderwerk",
       flex: 1.35,
     },
     {
       title: "Deelvervanging",
-      text: "Alleen het verrotte deel van een raam- of deurkozijn wordt vervangen. Daarna is het kozijn weer als nieuw.",
+      text: "Alleen het verrotte deel van het kozijn.",
       href: "/deelvervanging",
       flex: 1.2,
     },
     {
       title: "Glaswerk",
-      text: "Van een eenvoudige ruit tot allerlei soorten en maten, inclusief isolatieglas.",
+      text: "Van een eenvoudige ruit tot isolatieglas.",
       href: "/glaswerk",
       flex: 0.86,
     },
     {
       title: "Vernieuwen",
-      text: "Verbetering of restauratie van houtwerk, windveren en boeien, en enkelglas naar hoog rendement glas.",
+      text: "Houtwerk, windveren en boeien.",
       href: "/vernieuwen",
       flex: 1.05,
     },
     {
       title: "Carport",
-      text: "Ook genoemd, naast timmerwerk en isolatieglas.",
+      text: "Ook in het overzicht.",
       flex: 0.72,
     },
   ],
@@ -157,12 +157,12 @@ export const content = {
 
   offerte: {
     subject: "Goedendag, offerteaanvraag",
-    note: "Dit formulier stuurt niets naar een server. Na verzenden opent uw e-mailprogramma een bericht aan renebruggeman@live.nl. Het bericht vertrekt pas als u het zelf verstuurt.",
+    note: "Dit formulier stuurt niets naar een server. Na verzenden opent uw mailprogramma een bericht aan renebruggeman@live.nl. Het bericht vertrekt pas als u het zelf verstuurt.",
   },
 
   contactForm: {
     subject: "Goedendag, bericht",
-    note: "Ook dit formulier stuurt niets naar een server. Het opent uw e-mailprogramma, met als aanhef Goedendag.",
+    note: "Ook dit formulier stuurt niets naar een server. Het opent uw mailprogramma, met als aanhef Goedendag.",
   },
 
   werkOptions: [
