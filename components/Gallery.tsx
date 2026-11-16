@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
-import type { Photo, PhotoGroup } from "@/content";
+import { reeksId, type Photo, type PhotoGroup } from "@/content";
 import { Photo as Frame } from "@/components/Photo";
 
 export default function Gallery({
@@ -57,7 +57,7 @@ export default function Gallery({
     <div>
       {sections.map(({ group, start }) => {
         return (
-          <section key={group.label} className="mt-10">
+          <section key={group.label} id={reeksId(group.label)} className="mt-10 scroll-mt-24">
             <h2 className="font-mono text-[0.95rem] font-medium tracking-wide text-oker">{group.label}</h2>
             <ul className={listClass(layout)}>
               {group.photos.map((photo, photoIndex) => (

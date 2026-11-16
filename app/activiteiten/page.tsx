@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { activiteitPhotos, activiteitStamp, content } from "@/content";
 import { Photo } from "@/components/Photo";
+import { Scarf } from "@/components/Joints";
 import Gallery from "@/components/Gallery";
 
 export const metadata: Metadata = {
@@ -9,21 +10,44 @@ export const metadata: Metadata = {
     "René Bruggeman Schilderwerken is ieder jaar hoofdsponsor van het Krent Slemdamesdubbel tennistoernooi in oktober.",
 };
 
+const marks = [
+  { title: "Ieder jaar", text: "Elk jaar opnieuw hoofdsponsor, in oktober." },
+  { title: "Hoofdsponsor", text: "Van het Krent Slemdamesdubbel tennistoernooi." },
+  { title: "Oktober", text: "De foto's tonen het bord, de beker en de speelsters." },
+];
+
 export default function ActiviteitenPage() {
   return (
     <>
-      <div className="mx-auto grid max-w-6xl items-end gap-8 px-5 pt-12 md:grid-cols-[minmax(0,1fr)_145px] md:pt-16">
-        <header className="pb-2">
-          <h1 className="font-display max-w-4xl text-[clamp(2.5rem,5.4vw,4.4rem)] leading-[1.05]">Krent Slemdamesdubbel</h1>
-          <p className="mt-6 max-w-2xl">{content.activiteiten.line}</p>
-        </header>
-        <figure className="pb-2">
+      <header className="mx-auto grid max-w-6xl items-end gap-8 px-5 pt-12 md:grid-cols-[minmax(0,1fr)_160px] md:pt-16">
+        <div>
+          <h1 className="font-display max-w-4xl text-[clamp(2.6rem,5.6vw,4.8rem)] leading-[1.02]">Krent Slemdamesdubbel</h1>
+          <p className="mt-6 max-w-2xl font-display text-[clamp(1.35rem,2.2vw,1.8rem)] leading-snug">
+            {content.activiteiten.line}
+          </p>
+        </div>
+        <figure>
           <Photo photo={activiteitStamp} />
-          <figcaption className="mt-2 text-[1rem]">Klein beeld bij de activiteiten.</figcaption>
+          <figcaption className="mt-2 text-[1rem]">Klein beeld bij de activiteiten, op ware grootte.</figcaption>
         </figure>
+      </header>
+
+      <div className="mt-10 flex flex-col lg:flex-row lg:items-stretch">
+        {marks.map((mark, index) => (
+          <div key={mark.title} className="contents">
+            {index > 0 ? <Scarf /> : null}
+            <article className={`min-w-0 flex-1 px-6 py-8 ${index === 1 ? "bg-inkt text-wit" : "bg-vlak"}`}>
+              <h2 className="font-display text-3xl leading-none md:text-4xl">{mark.title}</h2>
+              <p className="mt-4 max-w-sm">{mark.text}</p>
+            </article>
+          </div>
+        ))}
       </div>
-      <div className="mx-auto max-w-6xl px-5 pb-16">
-        <p className="max-w-xl">Foto&apos;s van het toernooi, onder meer het bord, de beker en de speelsters.</p>
+
+      <div className="mx-auto max-w-6xl px-5 py-12 pb-16">
+        <p className="max-w-xl">
+          Onder meer het bord met zijn naam, de beker en de speelsters. Zonder namen van speelsters.
+        </p>
         <Gallery groups={[{ label: "01–10", photos: activiteitPhotos }]} layout="stack" />
       </div>
     </>

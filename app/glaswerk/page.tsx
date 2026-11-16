@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { content } from "@/content";
+import { content, glassLadder } from "@/content";
 import { CallBand, PageHeader } from "@/components/Blocks";
+import { Scarf } from "@/components/Joints";
 
 export const metadata: Metadata = {
   title: "Glaswerk",
@@ -10,19 +11,45 @@ export const metadata: Metadata = {
 };
 
 export default function GlaswerkPage() {
-  const { intro, vernieuwen } = content;
   return (
     <>
-      <PageHeader title="Glas, van een eenvoudige ruit tot isolatieglas" lede={intro.glass} />
-      <div className="mx-auto grid max-w-6xl gap-10 px-5 py-8 md:grid-cols-2 md:py-12">
+      <PageHeader title="Glas, van een eenvoudige ruit tot isolatieglas" lede={content.intro.glass} />
+      <div className="mx-auto max-w-6xl px-5 pt-4 pb-6">
+        <p className="max-w-xl">
+          Dit is wat hij er zelf over schrijft, van een eenvoudige ruit tot het vervangen van enkelglas.
+        </p>
+      </div>
+      <div className="mx-auto flex max-w-6xl flex-col gap-0 px-5 pb-16">
+        {glassLadder.map((step, index) => (
+          <div key={step} style={{ marginLeft: `${index * 6}%` }}>
+            {index > 0 ? (
+              <div className="max-w-3xl">
+                <Scarf axis="y" />
+              </div>
+            ) : null}
+            <h2
+              className={`max-w-3xl px-6 py-8 font-display text-[clamp(1.8rem,3vw,2.8rem)] leading-tight ${index % 2 === 0 ? "bg-vlak" : "bg-wit"}`}
+            >
+              {step}
+            </h2>
+          </div>
+        ))}
+      </div>
+      <div className="mx-auto grid max-w-6xl gap-8 px-5 pb-16 md:grid-cols-2">
         <p>
-          Ik plaats isolatieglas, en ik vervang enkelglas door hoog rendement glas. Dat hoort bij het{" "}
+          Isolatieglas plaatsen staat ook in de openingsregel van zijn werk, naast timmerwerk en de kozijnreparaties.
+        </p>
+        <p>
+          Enkelglas vervangen door hoog rendement glas hoort bij het{" "}
           <Link href="/vernieuwen" className="text-oker">
             vernieuwen van houtwerk
           </Link>
+          . Foto&apos;s zonder bijschrift staan bij de{" "}
+          <Link href="/projecten" className="text-oker">
+            projecten
+          </Link>
           .
         </p>
-        <p className="bg-vlak px-6 py-6">{vernieuwen.lines[1]}</p>
       </div>
       <CallBand />
     </>

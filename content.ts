@@ -76,25 +76,25 @@ export const content = {
   services: [
     {
       title: "Schilderwerk",
-      text: "Onderhoud binnen en buiten hoort bij mijn dagelijkse werk.",
+      text: "Onderhoud binnen en buiten hoort bij mijn dagelijkse werk. Voor binnenwerk van november tot en met maart spreek ik een kostendekkend uurloon af.",
       href: "/schilderwerk",
       flex: 1.35,
     },
     {
       title: "Deelvervanging",
-      text: "Alleen het verrotte deel van het kozijn wordt vervangen.",
+      text: "Alleen het verrotte deel van een raam- of deurkozijn wordt vervangen. Daarna is het kozijn weer als nieuw.",
       href: "/deelvervanging",
       flex: 1.2,
     },
     {
       title: "Glaswerk",
-      text: "Van een eenvoudige ruit tot hoog rendement glas.",
+      text: "Van een eenvoudige ruit tot allerlei soorten en maten, inclusief isolatieglas.",
       href: "/glaswerk",
       flex: 0.86,
     },
     {
       title: "Vernieuwen",
-      text: "Houtwerk, windveren en boeien.",
+      text: "Verbetering of restauratie van houtwerk, windveren en boeien, en enkelglas naar hoog rendement glas.",
       href: "/vernieuwen",
       flex: 1.05,
     },
@@ -248,6 +248,32 @@ export const projectGroups: PhotoGroup[] = projectSpans.map(([label, from, to]) 
   label,
   photos: range(from, to).map(projectPhoto),
 }));
+
+export const galleryPreview: Photo[] = [8, 20, 36, 47, 73].map((n) => projectPhoto(n));
+
+export function reeksId(label: string) {
+  return "reeks-" + label.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
+export const glassLadder = [
+  "Een eenvoudige ruit",
+  "Allerlei soorten en maten",
+  "Isolatieglas plaatsen",
+  "Enkelglas vervangen door hoog rendement glas",
+];
+
+export const winterMonths = ["November", "December", "Januari", "Februari", "Maart"];
+
+export const careerMarks = [
+  {
+    year: "1978",
+    text: "Sindsdien werkzaam als schilder. Eerst bij een schildersbedrijf.",
+  },
+  {
+    year: "2007",
+    text: "De sprong naar ZZP'er.",
+  },
+];
 
 export const deelGroups: PhotoGroup[] = [
   {

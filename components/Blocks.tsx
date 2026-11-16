@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { Fragment } from "react";
-import { content } from "@/content";
+import { content, type Photo as PhotoData } from "@/content";
 import { ctaType } from "@/lib/cta";
 import { Scarf } from "@/components/Joints";
+import { Photo } from "@/components/Photo";
 
 export function PageHeader({ title, lede }: { title: string; lede?: string }) {
   return (
@@ -61,14 +62,14 @@ export function ServiceJoint() {
               {href ? (
                 <Link
                   href={href}
-                  className={`member-link block min-h-44 px-6 py-8 no-underline lg:min-h-72 lg:px-7 lg:py-10 ${tone}`}
+                  className={`member-link block min-h-44 min-w-0 px-6 py-8 no-underline lg:min-h-72 lg:px-7 lg:py-10 ${tone}`}
                   style={{ flexGrow: item.flex, flexBasis: 0, flexShrink: 1 }}
                 >
                   {body}
                 </Link>
               ) : (
                 <div
-                  className={`min-h-44 px-6 py-8 lg:min-h-72 lg:px-7 lg:py-10 ${tone}`}
+                  className={`min-h-44 min-w-0 px-6 py-8 lg:min-h-72 lg:px-7 lg:py-10 ${tone}`}
                   style={{ flexGrow: item.flex, flexBasis: 0, flexShrink: 1 }}
                 >
                   {body}
@@ -86,6 +87,32 @@ export function ServiceJoint() {
           Vrijblijvende offerte
         </Link>
       </div>
+    </section>
+  );
+}
+
+export function PhotoRibbon({
+  photos,
+  title,
+  note,
+}: {
+  photos: PhotoData[];
+  title: string;
+  note: string;
+}) {
+  return (
+    <section className="mx-auto max-w-6xl px-5 py-14">
+      <h2 className="font-display text-3xl leading-tight md:text-4xl">{title}</h2>
+      <p className="mt-3 max-w-xl">{note}</p>
+      <ul className="mt-8 flex flex-wrap items-end gap-3">
+        {photos.map((item) => (
+          <li key={item.src}>
+            <Link href="/projecten" className="block bg-vlak p-2 no-underline">
+              <Photo photo={item} displayWidth={item.w >= item.h ? 340 : 210} />
+            </Link>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

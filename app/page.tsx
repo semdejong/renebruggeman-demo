@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { content } from "@/content";
+import { careerMarks, content, galleryPreview } from "@/content";
 import { ctaType } from "@/lib/cta";
 import { Photo } from "@/components/Photo";
-import { CallBand, ServiceJoint } from "@/components/Blocks";
+import { CallBand, PhotoRibbon, ServiceJoint } from "@/components/Blocks";
+import { Scarf } from "@/components/Joints";
 
 export default function Home() {
   const { company, overview, contact, intro } = content;
@@ -77,6 +78,33 @@ export default function Home() {
           </p>
         </div>
       </section>
+
+      <section className="mx-auto max-w-6xl px-5 pb-8">
+        <h2 className="font-display max-w-xl text-3xl leading-tight md:text-4xl">Zo noemt hij zijn loopbaan</h2>
+        <p className="mt-3 max-w-xl">Schilder sinds 1978, ZZP&apos;er sinds 2007.</p>
+        <div className="mt-6 flex flex-col md:flex-row md:items-stretch">
+          {careerMarks.map((mark, index) => (
+            <div key={mark.year} className="contents">
+              {index > 0 ? <Scarf /> : null}
+              <div className={`min-w-0 flex-1 px-6 py-8 ${index === 0 ? "bg-vlak" : "bg-wit"}`}>
+                <p className="font-mono text-2xl">{mark.year}</p>
+                <p className="mt-3 max-w-sm">{mark.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p className="mt-6">
+          <Link href="/over-ons" className="text-oker">
+            De voorstelling in zijn eigen woorden
+          </Link>
+        </p>
+      </section>
+
+      <PhotoRibbon
+        photos={galleryPreview}
+        title="Uit de galerij"
+        note="Vijf werkfoto's, op nummer gezet en zonder bijschrift. De hele reeks staat bij de projecten."
+      />
 
       <CallBand />
     </>
